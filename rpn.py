@@ -2,7 +2,6 @@
 
 import operator
 import readline
-import colorize
 
 
 operators = {
@@ -32,7 +31,6 @@ def calculate(myarg):
     return stack.pop()
 
 def main():
-    root = Tk()
     while True:
         result = calculate(input("rpn calc> "))
         print("Result: ", result)
