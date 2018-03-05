@@ -2,6 +2,7 @@
 
 import operator
 import readline
+from termcolor import colored
 
 
 operators = {
@@ -23,6 +24,9 @@ def calculate(myarg):
             function = operators[token]
             arg2 = stack.pop()
             arg1 = stack.pop()
+            hw_text =  colored('hello', 'red'), colored('world', 'green')
+            print(hw_text)
+            #print colored(arg1, 'blue'), colored(token, 'green'), colored(arg2, 'blue')
             result = function(arg1, arg2)
             stack.append(result)
         print(stack)
