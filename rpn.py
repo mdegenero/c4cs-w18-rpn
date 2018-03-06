@@ -2,8 +2,7 @@
 
 import operator
 import readline
-from termcolor import colored
-
+from colorama import Fore
 
 operators = {
     '+': operator.add,
@@ -15,6 +14,8 @@ operators = {
         
 
 def calculate(myarg):
+    if myarg in ['quit', 'q', 'exit']:
+        exit()
     stack = list()
     for token in myarg.split():
         try:
@@ -24,20 +25,20 @@ def calculate(myarg):
             function = operators[token]
             arg2 = stack.pop()
             arg1 = stack.pop()
-            hw_text =  colored('hello', 'red'), colored('world', 'green')
-            print(hw_text)
-            #print colored(arg1, 'blue'), colored(token, 'green'), colored(arg2, 'blue')
+            print(Fore.BLUE + str(arg1), Fore.GREEN + str(token), Fore.BLUE + str(arg2), Fore.WHITE)
             result = function(arg1, arg2)
             stack.append(result)
         print(stack)
     if len(stack) != 1:
         raise TypeError("Too many parameters")
     return stack.pop()
-
 def main():
     while True:
         result = calculate(input("rpn calc> "))
-        print("Result: ", result)
+        if result < 0:
+            print(Fore.MAGENTA + "Result :", Fore.RED + str(result), Fore.WHITE)
+        else:
+            print(Fore.MAGENTA + "Result: ", Fore.BLUE + str(result), Fore.WHITE)
 
 if __name__ == '__main__':
     main()
