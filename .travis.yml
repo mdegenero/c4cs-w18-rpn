@@ -3,9 +3,8 @@ python:
   - "3.5"
 before_install:
  - pip install colorama
- - pip install pytest pytest-cov
  - pip install codecov
 script:
-  - py.test
+  - coverage run test_rpn.py
 after_success:
  - codecov
