@@ -1,4 +1,4 @@
-import coveralls
+import codecov
 import unittest
 
 import rpn
