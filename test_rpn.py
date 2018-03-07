@@ -1,4 +1,4 @@
-import 'coveralls'
+import coveralls
 Coveralls.wear!
 import unittest
 
