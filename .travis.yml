@@ -4,8 +4,8 @@ python:
 before_install:
  - pip install colorama
  - pip install pytest pytest-cov
- - pip install coveralls
+ - pip install codecov
 script:
   - py.test
 after_success:
- - coveralls
+ - codecov
