@@ -3,8 +3,9 @@ python:
   - "3.5"
 before_install:
  - pip install colorama
+ - pip install pytest pytest-cov
  - pip install coveralls
 script:
-  - make test
+  - py.test
 after_success:
  - coveralls
